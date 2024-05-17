@@ -1,5 +1,3 @@
-const blogArea = document.querySelector('#blog-area');
-
 const scrollTrack = document.querySelector('#scrollTrack');
 const scrollThumb = scrollTrack.querySelector('.scrollThumb');
 const blogItems = document.querySelector('.blog__items');
@@ -10,6 +8,7 @@ scrollThumb.onmousedown = function (event) {
   let shiftY = event.clientY - scrollThumb.getBoundingClientRect().top;
   document.addEventListener('mousemove', onMouseMove);
   document.addEventListener('mouseup', onMouseUp);
+
   function onMouseMove(event) {
     let newTop = event.clientY - shiftY - scrollTrack.getBoundingClientRect().top;
     // курсор вышел из слайдера => оставить бегунок в его границах.
@@ -24,12 +23,21 @@ scrollThumb.onmousedown = function (event) {
     scrollThumb.style.top = newTop + 'px';
     blogItems.style.bottom = newTop + 'px'
   }
+
   function onMouseUp() {
     document.removeEventListener('mouseup', onMouseUp);
     document.removeEventListener('mousemove', onMouseMove);
   }
 };
 
-scrollThumb.ondragstart = function () {
-  return false;
-};
+const bannerLeft = document.querySelector('.banner__left');
+const bannerCenter = document.querySelector('.banner__center');
+const bannerRight = document.querySelector('.banner__right');
+
+const bannerHeight = bannerLeft.offsetHeight*2;
+
+bannerLeft.innerHTML = bannerLeft.innerHTML + bannerLeft.innerHTML + bannerLeft.innerHTML;
+
+// bannerLeft.style.bottom = '0px';
+bannerCenter.innerHTML = bannerCenter.innerHTML + bannerCenter.innerHTML + bannerCenter.innerHTML;
+bannerRight.innerHTML = bannerRight.innerHTML + bannerRight.innerHTML + bannerRight.innerHTML;
