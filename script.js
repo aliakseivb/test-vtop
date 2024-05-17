@@ -30,14 +30,48 @@ scrollThumb.onmousedown = function (event) {
   }
 };
 
+
+//*todo подумать через клонирование и точную высоту одного начального сегмента*/
 const bannerLeft = document.querySelector('.banner__left');
 const bannerCenter = document.querySelector('.banner__center');
 const bannerRight = document.querySelector('.banner__right');
 
-const bannerHeight = bannerLeft.offsetHeight*2;
+for (let i = 0; i < 3; i++) {
+  bannerLeft.innerHTML += bannerLeft.innerHTML;
+  bannerCenter.innerHTML += bannerCenter.innerHTML;
+  bannerRight.innerHTML += bannerRight.innerHTML;
+}
 
-bannerLeft.innerHTML = bannerLeft.innerHTML + bannerLeft.innerHTML + bannerLeft.innerHTML;
+const burgerMenu = document.querySelector('.burger-menu');
+const language = document.querySelector('.language');
+const burger = document.querySelector('.burger');
+const headerMenu = document.querySelector('.header__menu');
+burgerMenu.addEventListener('click', (e) => {
+  e.composedPath().forEach(elem => {
+    if (elem === burger) {
+      headerMenu.classList.toggle('open');
+      burger.classList.toggle('active');
+      if (headerMenu.classList.contains('open')) {
+        document.querySelector('.hidden').classList.add('active');
+      } else {
+        document.querySelector('.hidden').classList.remove('active');
+      }
+    }
+    if (elem === language) {
+      headerMenu.classList.remove('open');
+      alert('Обязательно сделать смену языка ))')
+      document.querySelector('.hidden').classList.remove('active');
+    }
+  });
+});
 
-// bannerLeft.style.bottom = '0px';
-bannerCenter.innerHTML = bannerCenter.innerHTML + bannerCenter.innerHTML + bannerCenter.innerHTML;
-bannerRight.innerHTML = bannerRight.innerHTML + bannerRight.innerHTML + bannerRight.innerHTML;
+headerMenu.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' ||  e.target.tagName === 'LI' || e.target.classList.contains('action__item')) {
+      headerMenu.classList.remove('open');
+      document.querySelector('.hidden').classList.remove('active');
+      burger.classList.remove('active');
+      alert('Куда-то переходим и закрываем меню');
+    } else {
+      return false
+    }
+});

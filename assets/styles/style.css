@@ -36,6 +36,22 @@ body {
   font-family: LexendRegular, sans-serif;
 }
 
+.hidden {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  background: #110a1d;
+}
+
+.hidden.active {
+  display: block;
+  z-index: 1;
+}
+
 .wrap {
   max-width: 1920px;
   margin: 0 auto;
@@ -63,23 +79,30 @@ body {
 }
 
 /* HEADER STYLES START */
+
+
 .header__container {
   max-width: 1640px;
+  padding: 20px 44px;
   border: 4px solid #478BF9;
   border-radius: 64px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.header__menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px 44px;
-  box-sizing: border-box;
-}
+  flex-wrap: wrap;
 
+}
 .nav__items {
   list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
 }
 
 .nav__item {
@@ -110,10 +133,16 @@ body {
   margin-left: 191px;
 }
 
+.auth {
+  display: flex;
+}
+
 .action__item {
   display: flex;
   align-items: center;
+  justify-content: center;
   color: #ffffff;
+  font-size: 16px;
   text-transform: uppercase;
   border: 2px solid #9DADF2;
   border-radius: 24px;
@@ -140,6 +169,9 @@ body {
   fill: #110A1D;
 }
 
+.burger-menu {
+  display: none;
+}
 /* HEADER STYLES END */
 
 
@@ -149,7 +181,7 @@ body {
 .main__container {
   max-width: 1640px;
   height: 1030px;
-  overflow-y: hidden;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
 }
@@ -222,10 +254,15 @@ body {
   background: linear-gradient(to top, #111 50%, transparent 100%);
 }
 
+.banner ul li svg {
+  width: 100%;
+}
+
+
 .banner__left {
   position: relative;
   top: 20px;
-  animation: goDownBL 8s linear infinite;
+  animation: goDownBL 10s linear infinite;
 }
 
 @keyframes goDownBL {
@@ -240,7 +277,7 @@ body {
 .banner__right {
   position: relative;
   top: 40px;
-  animation: goDownBR 10s linear infinite;
+  animation: goDownBR 14s linear infinite;
 }
 
 @keyframes goDownBR {
@@ -248,18 +285,18 @@ body {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-85%);
+    transform: translateY(-50%);
   }
 }
 
 .banner__center {
   position: relative;
-  animation: goUp 12s linear infinite;
+  animation: goUp 18s linear infinite;
 }
 
 @keyframes goUp {
   0% {
-    transform: translateY(-80%);
+    transform: translateY(-50%);
   }
   100% {
     transform: translateY(0);
@@ -311,7 +348,6 @@ body {
 }
 
 .scrollTrack {
-  /*height: 100%;*/
   width: 8px;
   height: 400px;
   background: #54546C;
