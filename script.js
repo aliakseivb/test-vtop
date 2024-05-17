@@ -1,6 +1,4 @@
 const blogArea = document.querySelector('#blog-area');
-console.log(blogArea.clientHeight);
-
 
 const scrollTrack = document.querySelector('#scrollTrack');
 const scrollThumb = scrollTrack.querySelector('.scrollThumb');

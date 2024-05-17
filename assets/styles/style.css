@@ -58,8 +58,8 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-/* HEADER STYLES START */
 
+/* HEADER STYLES START */
 .header__container {
   max-width: 1640px;
   border: 4px solid #478BF9;
@@ -71,7 +71,7 @@ body {
   box-sizing: border-box;
 }
 
-.header__nav__items {
+.nav__items {
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -79,18 +79,25 @@ body {
   padding: 8px;
 }
 
-.header__nav__item {
+.nav__item {
   margin-right: 32px;
   font-size: 16px;
 }
 
-.header__nav__item:last-child {
+.nav__item:last-child {
   margin-right: 0;
 }
 
-.header__nav__item a {
+.nav__item a {
   color: #ffffff;
   text-decoration: none;
+  border-bottom: 1px solid;
+  border-color: transparent;
+}
+
+.nav__item a:hover {
+  color: #478BF9;
+  border-bottom-color: #478BF9;
 }
 
 .action {
@@ -126,7 +133,7 @@ body {
   background: #9DADF2;
 }
 
-.action__item:hover svg path{
+.action__item:hover svg path {
   fill: #110A1D;
 }
 
@@ -192,6 +199,7 @@ body {
 .banner__center {
   margin: 0 15px;
 }
+
 .blog {
   margin-top: 140px;
 }
@@ -223,16 +231,13 @@ body {
   position: relative;
 }
 
-.blog__item_area-clone {
+.scrollTrack {
+  /*height: 100%;*/
   width: 8px;
   height: 400px;
   background: #54546C;
   position: relative;
   top: 96px;
-}
-
-.scrollTrack {
-  height: 100%;
   border-radius: 4px;
 }
 
@@ -260,9 +265,9 @@ body {
 .blog__item:hover {
   background: #478BF9;
 }
+
 .blog__item_text {
   color: #ffffff;
-  font-family: LexendRegular, sans-serif;
   font-size: 24px;
   line-height: 28px;
   margin-bottom: 14px;
@@ -273,4 +278,56 @@ body {
   font-size: 14px;
   color: rgba(255, 255, 255, .6);
 }
+
 /* MAIN STYLES END */
+
+/* FOOTER STYLES START */
+
+
+.footer__container {
+  max-width: 1940px;
+  padding: 40px 140px 24px;
+  border: 4px solid #478BF9;
+  border-top-left-radius: 64px;
+  border-top-right-radius: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer .nav .nav__item {
+  margin-right: 40px;
+}
+
+.social__header {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #ffffff;
+  text-align: right;
+}
+
+.social__items a {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.social__items a svg {
+  width: 100%;
+  height: 100%;
+}
+.social__items a:hover svg path:first-child {
+  fill: #478BF9;
+}
+.social__items a:hover svg path:nth-child(2) {
+  fill: #ffffff;
+}
+.social__items a:hover {
+  background: #ffffff;
+}
+
+/* FOOTER STYLES END */
