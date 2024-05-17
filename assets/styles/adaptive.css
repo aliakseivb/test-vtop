@@ -85,6 +85,9 @@
     line-height: 24px;
   }
 
+  .footer__container {
+    padding: 40px 70px 24px;
+  }
 }
 
 @media screen and (max-width: 1220px) {
@@ -101,6 +104,11 @@
   .action {
     width: 100%;
     margin-left: 0;
+  }
+
+  .footer__container {
+    padding: 30px 50px 24px;
+    flex-direction: column;
   }
 }
 
@@ -225,6 +233,10 @@
   .nav__item,
   .action__item {
     font-size: 14px;
+  }
+
+  .footer__container {
+    padding: 20px 20px 30px;
   }
 }
 
@@ -366,6 +378,39 @@
   .blog {
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .footer__container {
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer .nav__items {
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .footer .nav__items .nav__item {
+    line-height: 20px;
+    margin-bottom: 2px;
+  }
+
+  .social__footer {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+  .social__items a {
+    width: 27px;
+    height: 27px;
+  }
+  .social__item:first-child {
+    margin-left: 0;
   }
 }
 
